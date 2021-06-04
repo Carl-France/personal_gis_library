@@ -13,21 +13,45 @@ def WGS84toSPCS (lat, lon):
 	north = cartesian[1]
 	return [north, east]
 
-def errordist(points):
+def errordist():
 	true = WGS84toSPCS(true_lat, true_lon)
 	reading = WGS84toSPCS(reading_lat, reading_lon)
-	north_err = (true[0] - reading[0])
-	east_err = (true[1] - reading[1])
+	north_err = (true[0] - reading[0]) * 12
+	east_err = (true[1] - reading[1]) * 12
 	total_error = np.sqrt(north_err**2 + east_err**2)
-	print('Closed-loop descrepancy of ' + str(north_err) + ' feet north and ' + str(east_err) + ' feet east.')
+	print('Coordinate error of ' + str(north_err) + ' inch north and ' + str(east_err) + ' inch east.')
 
 
-
+#railroad
 true_lat = 30.484588316
 true_lon = 90.952812394
 
-reading_lat = 30.48459150
-reading_lon = 90.95281133
+#railroad
+reading_lat = 30.48458833
+reading_lon = 90.95281300
+
+
+
+
+#overpass
+#true_lat =  30.45703143
+#true_lon = -90.94661762
+
+#overpass
+#reading_lat = 
+#reading_lon = 0
+
+
+print(crs_converter(30.45703143, -90.94661762, 'EPSG:6319', 'EPSG:4326'))
+
+
+
+
+
+
+
+
+print(errordist())
 
 """
 without houston rtk:
@@ -41,7 +65,3 @@ with houston rtk:
 -1.15 east
 
 """ 
-
-points = [true_lat, true_lon]
-
-print(errordist(points))
