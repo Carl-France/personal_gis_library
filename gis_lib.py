@@ -23,23 +23,23 @@ def errordist():
 
 
 #railroad
-true_lat = 30.484588316
-true_lon = 90.952812394
+#true_lat = 30.484588316
+#true_lon = 90.952812394
 
 #railroad
-reading_lat = 30.48458833
-reading_lon = 90.95281300
+#reading_lat = 30.48458833
+#reading_lon = 90.95281300
 
 
 
 
 #overpass
-#true_lat =  30.45703143
-#true_lon = -90.94661762
+true_lat =  30.45703143
+true_lon = -90.94661762
 
 #overpass
-#reading_lat = 
-#reading_lon = 0
+reading_lat = 30.45703150
+reading_lon = -90.94661733
 
 
 print(crs_converter(30.45703143, -90.94661762, 'EPSG:6319', 'EPSG:4326'))
