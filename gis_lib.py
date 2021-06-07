@@ -16,10 +16,10 @@ def WGS84toSPCS (lat, lon):
 def errordist():
 	true = WGS84toSPCS(true_lat, true_lon)
 	reading = WGS84toSPCS(reading_lat, reading_lon)
-	north_err = (true[0] - reading[0]) * 12
-	east_err = (true[1] - reading[1]) * 12
+	north_err = (true[0] - reading[0])
+	east_err = (true[1] - reading[1])
 	total_error = np.sqrt(north_err**2 + east_err**2)
-	print('Coordinate error of ' + str(north_err) + ' inch north and ' + str(east_err) + ' inch east.')
+	print('Coordinate error of ' + str(north_err) + ' ft north and ' + str(east_err) + ' ft east.')
 
 
 #railroad
@@ -34,16 +34,39 @@ def errordist():
 
 
 #overpass
-true_lat =  30.45703143
-true_lon = -90.94661762
+#true_lat =  30.45703143
+#true_lon = -90.94661762
 
 #overpass
-reading_lat = 30.45703150
-reading_lon = -90.94661733
+#reading_lat = 30.45703150
+#reading_lon = -90.94661733
+
+#Y-4 Corner (raw)
+#true_lat =  30.483614905
+#true_lon = -90.930939159
+
+#Y-4 Corner (EPSG:3857 to EPSG:4326)
+#true_lat =  30.4845937472222
+#true_lon = -90.9528201361111
+
+#Y-4 Corner
+#reading_lat =  30.484588316
+#reading_lon = -90.952812394
+
+#test true
+true_lat =  30.484588316
+true_lon = 90.952812394
 
 
-print(crs_converter(30.45703143, -90.94661762, 'EPSG:6319', 'EPSG:4326'))
+#test reading
+reading_lat =  30.4854615
+reading_lon = -90.93094033
 
+
+
+
+#print(crs_converter(30.4845930802, -90.9528120768, 'EPSG:4269', 'EPSG:4326'))
+#NAD83 (2011) is EPSG:6319 (i think)
 
 
 
