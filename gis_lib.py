@@ -54,37 +54,12 @@ def errordist():
 #reading_lon = -90.952812394
 
 #test true
-true_lat =  30.484588316
-true_lon = 90.952812394
+true_lat =  30.4853601690098
+true_lon = -90.931335658468
 
 
 #test reading
-reading_lat =  30.4854615
-reading_lon = -90.93094033
-
-
-
-
-#print(crs_converter(30.4845930802, -90.9528120768, 'EPSG:4269', 'EPSG:4326'))
-#NAD83 (2011) is EPSG:6319 (i think)
-
-
-
-
-
-
+reading_lat =  30.48534917
+reading_lon = -90.93133617
 
 print(errordist())
-
-"""
-without houston rtk:
-30.48459683 -90.95282300
- 3.27 ft north
--3.16 ft east
-
-with houston rtk:
-	30.48459150 -90.95281133 
--0.35 feet north
--1.15 east
-
-""" 
